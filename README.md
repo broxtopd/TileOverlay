@@ -109,4 +109,4 @@ Display the CalTopo topographic map blended with hillshade tiles from the web.
 
 Display the DEM blended with the CalTopo shaded relief map over the US and using the oceans shapefile to make oceans transparent.
 
-<pre>http://localhost:8080/cgi-bin/generate_kml.py?url=PATH_TO_DATA_DIRECTORY/DEM.tif;&clrfile=PATH_TO_DATA_DIRECTORY/elevation.clr;&bgurl=http://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/{$z}/{$y}/{$x};&zoom=5-16;&blend=0.3;&resample=bilinear;&shpfile=PATH_TO_DATA_DIRECTORY/ne_10m_ocean.shp;</pre>
+<pre>http://localhost:8080/cgi-bin/generate_kml.py?url=PATH_TO_DATA_DIRECTORY/DEM.tif;&clrfile=PATH_TO_DATA_DIRECTORY/elevation.clr;&bgurl=http://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/{$z}/{$y}/{$x};&zoom=5-16;&blend=0.5;&resample=bilinear;&shpfile=PATH_TO_DATA_DIRECTORY/ne_10m_ocean.shp;</pre>
