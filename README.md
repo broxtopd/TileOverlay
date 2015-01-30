@@ -65,7 +65,7 @@ The dynamic tile script is not needed to simply display tiles from the web.  It 
 - Download the data from https://dl.dropboxusercontent.com/u/1203002/GISData.zip
 - Unzip the folder to a local directory
 - Prepare the data (it is just a single band grayscale image, we need to add overview tiles to it).  On a command line in the directory where the GIS data is uncompressed and type: <pre>gdaladdo DEM.tif 2 4 8 16</pre>
-- In Google Earth, add a network link with the address: <pre>http://localhost:8080/cgi-bin/generate_kml.py?url=<PATH_TO_DATA_DIRECTORY>DEM.tif;&clrfile=<PATH_TO_DATA_DIRECTORY>elevation.clr;</pre>
+- In Google Earth, add a network link with the address: <pre>http://localhost:8080/cgi-bin/generate_kml.py?url=PATH_TO_DATA_DIRECTORY/DEM.tif;&clrfile=PATH_TO_DATA_DIRECTORY/elevation.clr;</pre>
 	
 For large datasets, it is essential to build overview tiles so that displaying the map at lower zoom levels is not too slow.
 
@@ -101,7 +101,7 @@ In addition to simply displaying a GIS data source, the script can perform simpl
 
 Same as the above example, but use the oceans shapefile to make oceans transparent.
 
-<pre>http://localhost:8080/cgi-bin/generate_kml.py?url=<PATH_TO_DATA_DIRECTORY>DEM.tif;&clrfile=<PATH_TO_DATA_DIRECTORY>elevation.clr;&shpfile=<PATH_TO_DATA_DIRECTORY>ne_10m_ocean.shp;</pre>
+<pre>http://localhost:8080/cgi-bin/generate_kml.py?url=PATH_TO_DATA_DIRECTORY/DEM.tif;&clrfile=PATH_TO_DATA_DIRECTORY/elevation.clr;&shpfile=PATH_TO_DATA_DIRECTORY/ne_10m_ocean.shp;</pre>
 
 Display the CalTopo topographic map blended with hillshade tiles from the web.
 
@@ -109,4 +109,4 @@ Display the CalTopo topographic map blended with hillshade tiles from the web.
 
 Display the DEM blended with the CalTopo shaded relief map over the US and using the oceans shapefile to make oceans transparent.
 
-<pre>http://localhost:8080/cgi-bin/generate_kml.py?url=<PATH_TO_DATA_DIRECTORY>DEM.tif;&clrfile=<PATH_TO_DATA_DIRECTORY>elevation.clr;&bgurl=http://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/{$z}/{$y}/{$x};&zoom=5-16;&ullr=-130_80_-52_23;&blend=0.3;&resample=bilinear;&shpfile=<PATH_TO_DATA_DIRECTORY>ne_10m_ocean.shp;</pre>
+<pre>http://localhost:8080/cgi-bin/generate_kml.py?url=PATH_TO_DATA_DIRECTORY/DEM.tif;&clrfile=PATH_TO_DATA_DIRECTORY/elevation.clr;&bgurl=http://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/{$z}/{$y}/{$x};&zoom=5-16;&ullr=-130_80_-52_23;&blend=0.3;&resample=bilinear;&shpfile=PATH_TO_DATA_DIRECTORY/ne_10m_ocean.shp;</pre>
