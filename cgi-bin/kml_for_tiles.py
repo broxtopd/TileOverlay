@@ -29,7 +29,7 @@
 #
 import math
 import urllib
-import urllib2
+import httplib
 from urlparse import urlparse
 import time
 import re
@@ -479,15 +479,23 @@ class KMLForTiles(object):
                 icon_url = icon_url.replace('{$z}', str(tz))
         
                 icon_url = icon_url.replace('&', '&amp;')
+            
                 # If specified, check if a tile exists, otherwise show a transparent png
                 if self.checkStatus == True:
-                    try:
-                        f = urllib2.urlopen(urllib2.Request(icon_url.replace('&amp;', '&')))
+                    o = urlparse(icon_url)
+                    server = o.netloc
+                    path = icon_url.replace('http://' + server,'')
+                    conn = httplib.HTTPConnection(server)
+                    conn.request("HEAD",path)
+                    status = conn.getresponse().status
+                
+                    if status < 400:
                         args['icon_url'] = icon_url
-                    except:
+                    else:
                         args['icon_url'] = self.transparentpng
                 else:
                     args['icon_url'] = icon_url
+
         else:
             # If instead a local GIS data source, link to dynamic tile script
             args['icon_url'] = self.tilescriptloc + '?' + querystring + '&amp;zxy=' + self.zxy    
