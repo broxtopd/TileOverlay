@@ -107,6 +107,6 @@ Display the CalTopo topographic map blended with hillshade tiles from the web.
 
 <pre>http://localhost:8080/cgi-bin/generate_kml.py?url=http:/s3-us-west-1.amazonaws.com/caltopo/topo/{$z}/{$x}/{$y}.png;&zoom=5-16;&ullr=-130_80_-52_23;&checkStatus;&bgurl=http://s3-us-west-1.amazonaws.com/ctrelief/relief/{$z}/{$x}/{$y}.png;&blend=0.3;</pre>
 
-Display the DEM blended with the CalTopo shaded relief map over the US and using the oceans shapefile to make oceans transparent.
+Display the DEM blended with the ESRI shaded relief map using the oceans shapefile to make oceans transparent.
 
 <pre>http://localhost:8080/cgi-bin/generate_kml.py?url=PATH_TO_DATA_DIRECTORY/DEM.tif;&clrfile=PATH_TO_DATA_DIRECTORY/elevation.clr;&bgurl=http://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/{$z}/{$y}/{$x};&zoom=5-16;&blend=0.5;&resample=bilinear;&shpfile=PATH_TO_DATA_DIRECTORY/ne_10m_ocean.shp;</pre>
