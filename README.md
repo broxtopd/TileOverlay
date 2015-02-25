@@ -1,5 +1,8 @@
 # Display Tile Map Sources In Google Earth
 
+My name is Patrick Broxton.  I am a hydrometeorologist who is interested in hydrologic modeling and developing land cover datasets.  Mapping has always been a hobby of mine, and this project is a way to share my interests in a way that is useful to others.
+
+
 This project is made up of two parts.  The first (referred to as the KML generator script) is a simple python script that, when run with a local web server (a simple python web server is provided), returns the kml structure that allows Google Earth to display many tile mapping services on the web.  The second (referred to as the dynamic tile generator script) includes routines to either blend downloaded web tiles and/or mix them with local GIS raster data sources (it must also be run using a local web server).  The local data sources do not need to be converted to tiles as this is done on the fly by the provided scripts (which currently make use of GDAL utility programs to do this).
 
 To use these scripts, Google Earth and Python must be installed.  In addition, if using the dynamic tile generator script, GDAL >= 2.0.0, along with the GDAL python bindings must be installed.  However, if the dynamic tile generator script will not be used, then GDAL is not required.
